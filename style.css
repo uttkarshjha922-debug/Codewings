@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #01fc01af;
+    min-height: 100vh;
+    color: #333;
+}
+
+.game-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat .label {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.stat:hover {
+    transform: translateY(-3px);
+}
+
+ #buySeeds {
+    background:black;
+    
+ }
+
+ #sellCrops {
+    background: #024502;
+ }
+
+.game-area {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.farm {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    padding: 20px;
+    background: rgba(2, 133, 0, 0.765);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.plot {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #8B4513;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    background: #D2B48C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.plot.empty {
+    background: linear-gradient(45deg, #D2691E, #CD853F);
+}
+
+.plot.seeded {
+    background: linear-gradient(45deg, #228B22, #32CD32);
+    animation: grow 2s ease-in-out;
+}
+
+.plot.growing {
+    background: linear-gradient(45deg, hsl(120, 49%, 64%), #98FB98);
+}
+
+.plot.ready {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    animation: pulse 1s infinite;
+}
+
+.plot.harvested {
+    background: #F4A460;
+    animation: shake 0.5s;
+}
+
+@keyframes grow {
+    0% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.btn {
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #ffc107, #fd7e14);
+    color: #333;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h3 {
+    color: #2E7D32;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.instructions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.instructions li {
+    padding: 8px 0;
+    font-size: 1.1em;
+    position: relative;
+    padding-left: 30px;
+}
+
+.instructions li:before {
+    content: "🌟 ";
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+}
+
+/* Notification Styles */
+@keyframes slideIn {
+    from { 
+        transform: translateX(100%); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+@keyframes slideOut {
+    to { 
+        transform: translateX(100%); 
+        opacity: 0; 
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .farm {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(6, 80px);
+        gap: 8px;
+        padding: 15px;
+    }
+    
+    .plot {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5em;
+    }
+    
+    .stats {
+        gap: 15px;
+    }
+    
+    .stat {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .btn {
+        min-width: 200px;
+        padding: 12px 20px;
+    }
+    
+    .instructions {
+        padding: 20px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .farm {
+        grid-template-columns: repeat(2, 70px);
+        grid-template-rows: repeat(10, 70px);
+        gap: 6px;
+        padding: 10px;
+    }
+    
+    .plot {
+        width: 70px;
+        height: 70px;
+        font-size: 1.3em;
+    }
+}

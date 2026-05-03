@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Crop city</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">💰 Money:</span>
+                    <span id="money" style="font-weight: 200;">$<span>1000</span></span>
+                </div>
+                <div class="stat">
+                    <span class="label">🌱 Seeds:</span>
+                    <span id="seeds" style="font-weight: 200;" >0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">🌽 Crops:</span>
+                    <span id="crops" style="font-weight: 200;" >0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">💹 Level:</span>
+                    <span id="level" style="font-weight: 200;">1</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <div class="farm" id="farm">
+                <!-- Farm plots will be generated here -->
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="buySeeds" class="btn btn-primary">Buy Seeds ($10)</button>
+            <button id="sellCrops" class="btn btn-success" disabled>Sell All Crops ($20 each)</button>
+            <button id="upgradeFarm" class="btn btn-warning">Upgrade Farm ($500)</button>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Click "Buy Seeds" to get seeds</li>
+                <li>Click on brown farm plots to plant seeds</li>
+                <li>Wait for crops to grow (green = ready to harvest)</li>
+                <li>Click green crops to harvest</li>
+                <li>Sell crops to earn money</li>
+                <li>Upgrade farm for more plots!</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
